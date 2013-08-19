@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Prueba Queue</h1>
+<form action="QueueServlet" method="post">
+	Connection URL: <input type="text" name="con_url">
+<br />
+	Destination Name: <input type="text" name="dest_name" />
+<br />
+Number of Messages: <input type="text" name="msg_number" />
+<br />
+<!--  input type="submit" value="Enviar Queue" name="qenviar"/-->
+<button type="submit" value="1" name="qsend">Send to Queue</button>
+<button type="submit" value="2" name="qsend">Receive from Queue</button>
+
+</form>
+<br/><br/><br/><br/>
+<h1>Prueba Topicos</h1> <br/>
+<form action="TopicServlet" method="post">
+	Connection URL: <input type="text" name="con_url">
+<br />
+	Destination Name: <input type="text" name="dest_name" />
+<br />
+Number of Messages: <input type="text" name="msg_number" />
+<br />
+<!--  input type="submit" value="Enviar Queue" name="qenviar"/-->
+<button type="submit" value="1" name="qsend">Send to Topic</button>
+<button type="submit" value="2" name="qsend">Receive from Topic </button>
+
+</form>
+</body>
+</html>
