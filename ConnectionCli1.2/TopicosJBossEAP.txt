@@ -1,0 +1,56 @@
+- Standalone
+
+	- Runtime (JVM, Java properties, etc)
+	- Paths (Java_home,etc)
+	- Conectores (Protocolos de comuncacion de JBoss)
+	- Datasources (Data Sources, XA Data sources, jdbc drivers) * Si esta definido
+	- Deployments (Aplicacion desplegadas en el servidor)
+	- Meessaging (Colas, topicos, connection factories) * si esta definido
+	- Logging (Handlers, log categories)
+	- socket bindings (Todos los puerts configurados de JBoss)
+	- mod_cluster *si esta disponible
+	- jgroups *si esta disponible
+
+- Dominio
+	- Host Controllers
+		- Nombre
+		- Runtime
+		- Paths
+		- Domain controller
+		- jvm * si esta disponible
+		- Servidores * si esta disponible
+			- nombre
+			- grupo
+			- jvm * si esta disponible
+
+	- Grupos de servidores
+		- nombre
+		- perfil
+		- jvm * si esta disponible
+		- Deployments (Aplicacion desplegadas en el servidor)
+)
+	
+	- default
+		- Conectores (Protocolos de comuncacion de JBoss)
+		- Datasources (Data Sources, XA Data sources, jdbc drivers)
+		- Logging (Handlers, log categories)
+		- socket bindings (Todos los puerts configurados de JBoss) standard-sockets
+
+	- ha
+		- Lo mismo de default
+		- Jgroups
+		- mod_cluster
+
+	- full
+		- Lo mismo que default
+		- Messaging
+
+	-full-ha
+		- Lo mismo que default
+		- MEssaging
+		- mod_cluster
+		- jgroups
+
+	- Perfil Personalizado
+		- Lo mismo que default
+		- Subsystemas que tenga configurados
