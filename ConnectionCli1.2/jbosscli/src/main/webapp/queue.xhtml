@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form id="frmqueue">
+		<p:panel id="messagesQueue" header="Prueba Queues"
+			style="margin-bottom:10px;">
+			<p:messages id="mqueue" />
+			<h:panelGrid columns="3">
+
+				<h:outputLabel for="cfname" value="Connection Factory Name: *" />
+				<p:inputText id="cfname" value="#{queueBean.cfname}" required="true"
+					label="Connection Factory Name" />
+				<p:message for="cfname" />
+
+				<h:outputLabel for="queuename" value="Queue Name: *" />
+				<p:inputText id="queuename" value="#{queueBean.queuename}"
+					required="true" label="Queue Name" />
+				<p:message for="queuename" />
+
+
+				<h:outputLabel for="msgnumber" value="Numero de Mensajes: *" />
+				<p:inputText id="msgnumber" value="#{queueBean.msgnumber}"
+					required="true" label="Numero de Mensajes">
+				</p:inputText>
+				<p:message for="msgnumber" />
+
+			</h:panelGrid>
+		</p:panel>
+
+
+		<p:commandButton value="Start Queue Producer"
+			actionListener="#{queueBean.sendMessages}" update="messagesQueue" />
+		<p:commandButton value="Start Queue Consumer"
+			actionListener="#{queueBean.consumeMessages}" update="messagesQueue" />
+		<p:commandButton value="Stop Queue Consumer"
+			actionListener="#{queueBean.stopConsumer}" update="messagesQueue" />
+	</h:form>
+	
+	<h:form id="frmtopics">
+		<p:panel id="messageTopic" header="Topicos"
+			style="margin-bottom:10px;">
+			<p:messages id="mtopic" />
+			<h:panelGrid columns="3">
+
+				<h:outputLabel for="cfname" value="Connection Factory Name: *" />
+				<p:inputText id="cfname" value="#{topicBean.cfname}" required="true"
+					label="Connection Factory Name" />
+				<p:message for="cfname" />
+
+				<h:outputLabel for="topicname" value="Topic Name: *" />
+				<p:inputText id="topicname" value="#{topicBean.topicname}"
+					required="true" label="Topic Name" />
+				<p:message for="topicname" />
+
+
+				<h:outputLabel for="msgnumber" value="Numero de Mensajes: *" />
+				<p:inputText id="msgnumber" value="#{topicBean.msgnumber}"
+					required="true" label="Numero de Mensajes">
+				</p:inputText>
+				<p:message for="msgnumber" />
+			</h:panelGrid>
+		</p:panel>	
+		
+		<p:commandButton value="Start Topic Producer"
+			actionListener="#{topicBean.sendMessages}" update="messageTopic"/>
+		<p:commandButton value="Start Topic Consumer"
+			actionListener="#{topicBean.consumeMessages}" update="messageTopic" />
+		<p:commandButton value="Stop Topic Consumer"
+			actionListener="#{topicBean.stopConsumer}" update="messageTopic" />
+	</h:form>
+</h:body>
+</html>
