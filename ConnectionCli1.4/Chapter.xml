@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "Book.ent">
+%BOOK_ENTITIES;
+]>
+jboss.server.temp.dir: /usr/share/jboss/standalone/tmp
+user.home: /home/kira
+jboss.server.base.dir: /usr/share/jboss/standalone
+java.home: /usr/lib/jvm/java-7-openjdk-amd64/jre
+user.dir: /home/kira
+jboss.server.data.dir: /usr/share/jboss/standalone/data
+jboss.home.dir: /usr/share/jboss
+jboss.server.log.dir: /usr/share/jboss/standalone/log
+jboss.server.config.dir: /usr/share/jboss/standalone/configuration
+jboss.controller.temp.dir: /usr/share/jboss/standalone/tmp
